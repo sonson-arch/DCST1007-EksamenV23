@@ -1,3 +1,7 @@
+//Brukes ikke for eksamen da det kjøres i SEB
+// Eventuell for testing - purpose
+// Endre til egen database oppkobling!!!
+
 import mysql from 'mysql2';
 
 // Create a cache of connections to the mysql server.
@@ -9,3 +13,4 @@ export let pool = mysql.createPool({
   password: 'ysd02Ahj', // Replae "password" with your namox.idi.ntnu.no password
   database: 'sondrhso', // Replace "username" with your namox.idi.ntnu.no username
 });
+

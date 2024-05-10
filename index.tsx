@@ -1,5 +1,7 @@
-//indext.tsx
-// Import necessary modules
+//Oppgave 3 - Dynamisk Handleliste
+//indext.tsx - LØSNING MED TYPESCRIPT
+
+// Import necessary modules - React components
 import * as React from 'react';
 import { Component } from 'react-simplified';
 import { createRoot } from 'react-dom/client';
@@ -18,7 +20,7 @@ class Menu extends Component {
   }
 }
 
-// Main component for handling shopping list
+// Main component for shopping list - render shopping list page (FIG A)
 class Handleliste extends Component {
   items: Item[] = []; // Array to store items
   newItem: Item = new Item(); // Object to store new item details
