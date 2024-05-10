@@ -106,7 +106,7 @@ console.log("Overflate Sylinder: " + s.beregnOverflate());
 
 
 //--------- OPPGAVE 2 ------------ //
-
+// DEL A
 class Bankkonto {
     constructor(kontoNummer, kontoEier, kontoSaldo) {
         this.kontoNummer = kontoNummer;
@@ -133,7 +133,9 @@ class Bankkonto {
         return this.kontoSaldo;
     }
 
+    // DEL C
     // The overforing method transfers the given amount to another account if it is available
+    // Two failsafe, Not enough funds or account not exist
     overforing(belop, tilKonto) {
         if(belop > this.kontoSaldo) {
             return console.log('Error: Insufficient balance');
@@ -145,12 +147,15 @@ class Bankkonto {
         }
     }
 }
+
+// DEL B
+// The Bank class represents a bank with a name and a list of accounts within the bank
 class Bank {
     constructor(bankNavn) {
         this.bankNavn = bankNavn;
         this.kontoer = [];
     }
-    // The nyKonto method creates a new account and adds it to the list of kontoer
+    // The nyKonto method creates a new account and adds it to the list of kontoer in the bank
     nyKonto(kontoNummer, kontoEier, kontoSaldo) {
         const konto = new Bankkonto(kontoNummer, kontoEier, kontoSaldo);
         this.kontoer.push(konto);
