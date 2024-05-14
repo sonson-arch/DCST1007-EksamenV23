@@ -5,7 +5,7 @@ import mysql from 'mysql2';
 export let pool = mysql.createPool({
   host: 'namox.idi.ntnu.no',
   connectionLimit: 1, // Limit the number of simultaneous connections to avoid overloading the mysql server
-  user: 'sondrhso', // Replace "username" with your namox.idi.ntnu.no username
-  password: 'ysd02Ahj', // Replae "password" with your namox.idi.ntnu.no password
-  database: 'sondrhso', // Replace "username" with your namox.idi.ntnu.no username
+  user: '####', // Replace "username" with your namox.idi.ntnu.no username
+  password: '####', // Replae "password" with your namox.idi.ntnu.no password
+  database: '####', // Replace "username" with your namox.idi.ntnu.no username
 });
