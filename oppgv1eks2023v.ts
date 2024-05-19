@@ -1,4 +1,8 @@
 //Del A
+// TYPESCRIPT STATISK TYPING
+// DEFINERER TYPE VED : TYPE 
+// EKSEMPEL: height: number;
+
 class Figur {
     getArea(): number {
         return 0

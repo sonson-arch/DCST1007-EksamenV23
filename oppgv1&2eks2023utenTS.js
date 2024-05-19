@@ -1,19 +1,22 @@
 //Oppgave 1
+// DEL A og B
 
 // Base class for all figures
 class Figur {
     constructor() {}
-// Methods, return 0 by default
+// Methods for calculations regardless of figure, return 0 by default
 
     beregnAreal() { return 0; }
     beregnOmkrets() { return 0; }
     beregnVolum() { return 0; }
     beregnOverflate() { return 0; }
 }
-
+// Class Rektangel Extends Figur class
+//Super() is used to call the constructor of the parent class Figur
+// From the derived classes Rektangel, Boks, Sirkel, and Sylinder.
 class Rektangel extends Figur {
     constructor(hoyde, bredde) {
-        super();
+        super(); 
         this.hoyde = hoyde;
         this.bredde = bredde;   
     }
@@ -29,6 +32,7 @@ class Rektangel extends Figur {
     }
 }
 
+// Boks class extends Rektangel class
 class Boks extends Rektangel {
     constructor(hoyde, bredde, lengde) {
         super(hoyde, bredde);
@@ -68,11 +72,13 @@ class Sylinder extends Sirkel {
         super(radius);
         this.lengde = lengde;
     }
-    // Method to calculate volume of cylinder
+
+    // Method to calculate volume of cylinder, using objects
     beregnVolum() {
         return Math.PI * this.radius * this.radius * this.lengde;
     }
-// Method to calculate surface area of cylinder
+
+// Method to calculate surface area (Overflate) of cylinder, using Math Object 
     beregnOverflate() {
         return (
             (2 * Math.PI * this.radius * this.radius) +
@@ -81,18 +87,26 @@ class Sylinder extends Sirkel {
     }
 }
 
-// Create new box and cylinder objects
+// DEL C
+// Create new box and cylinder objects with given dimensions from Figur constrcutor
 let b = new Boks(2,3,4);
 let s = new Sylinder(2,3);
 
-// Log volume and surface area of box and cylinder to console
+
+// Log volume and surface area of box and cylinder to console.log
+// for viewing purpose during Exam
 console.log("Volum Boks: " + b.beregnVolum());
 console.log("Overflate Boks: " + b.beregnOverflate());
 console.log("Volum Sylinder: " + s.beregnVolum());
 console.log("Overflate Sylinder: " + s.beregnOverflate());
 
-//Oppgave 2
 
+
+
+
+
+//--------- OPPGAVE 2 ------------ //
+// DEL A
 class Bankkonto {
     constructor(kontoNummer, kontoEier, kontoSaldo) {
         this.kontoNummer = kontoNummer;
@@ -119,7 +133,9 @@ class Bankkonto {
         return this.kontoSaldo;
     }
 
+    // DEL C
     // The overforing method transfers the given amount to another account if it is available
+    // Two failsafe, Not enough funds or account not exist
     overforing(belop, tilKonto) {
         if(belop > this.kontoSaldo) {
             return console.log('Error: Insufficient balance');
@@ -131,12 +147,15 @@ class Bankkonto {
         }
     }
 }
+
+// DEL B
+// The Bank class represents a bank with a name and a list of accounts within the bank
 class Bank {
     constructor(bankNavn) {
         this.bankNavn = bankNavn;
         this.kontoer = [];
     }
-    // The nyKonto method creates a new account and adds it to the list of kontoer
+    // The nyKonto method creates a new account and adds it to the list of kontoer in the bank
     nyKonto(kontoNummer, kontoEier, kontoSaldo) {
         const konto = new Bankkonto(kontoNummer, kontoEier, kontoSaldo);
         this.kontoer.push(konto);

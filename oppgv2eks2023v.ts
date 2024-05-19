@@ -1,3 +1,8 @@
+// OPPGAVE 2 EKSAMEN V23
+//LF MED TYPESCRIPT!
+// LES TYPESCRIPT I STOTTEARKET VED PROBLEMMER
+
+// DEL A: Lage Bankkonto og Innskudd og Uttakk med failsafe sjekk
 class Bankkonto {
     kontoNummer: number;
     kontoEier: string;
@@ -29,6 +34,7 @@ class Bankkonto {
         return this.kontoSaldo;
     }
 
+    //DEL C - Overforing av penger mellom konto med failsafe
     // The overforing method transfers the given amount to another account if it is available
     overforing(belop: number, tilKonto: Bankkonto) {
         if(belop > this.kontoSaldo) {
@@ -41,6 +47,8 @@ class Bankkonto {
         }
     }
 }
+
+// DEL B: Lage Bank og sjekke om en bankkomto eksisterer
 class Bank {
     bankNavn: string;
     kontoer: Bankkonto[];
@@ -61,6 +69,7 @@ class Bank {
     }
 }
 
+//Testvariabler for å teste kode
 let dnb = new Bank('DNB');
 
 dnb.nyKonto(1234, 'Per', 1000);
